@@ -4,7 +4,7 @@ Thanks for visiting this repository!
 This project brings together data from multiple sources, organizes it in a structured warehouse, and delivers clear insights through analytics and dashboards.
 Feel free to explore the code, workflows, and documentation. Contributions and feedback are always welcome!
 
-##📌 Project Requirements
+## 📌 Project Requirements
 
 ### Building the Data Warehouse (Data Engineering)
 #### Objectives
