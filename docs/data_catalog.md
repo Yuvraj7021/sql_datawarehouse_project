@@ -33,40 +33,49 @@ Provides product-level attributes used for product performance analysis, categor
 
 Table Structure
 Column Name	Data Type	Description
-product_key	INT	Surrogate key uniquely identifying each product.
-product_id	INT	Business identifier for the product.
-product_number	NVARCHAR(50)	Alphanumeric product code for tracking and inventory.
-product_name	NVARCHAR(50)	Descriptive name of the product.
-category_id	NVARCHAR(50)	Identifier for the product category.
-category	NVARCHAR(50)	High-level product category (e.g., Bikes, Components).
-subcategory	NVARCHAR(50)	Detailed product classification within the category.
-maintenance_required	NVARCHAR(50)	Indicates if maintenance is required (Yes/No).
-cost	INT	Base cost of the product.
-product_line	NVARCHAR(50)	Product line or series (e.g., Road, Mountain).
-start_date	DATE	Date when the product became available for sale.
+### Product Table Structure
+
+| Column Name          | Data Type    | Description                                                    |
+|----------------------|-------------|----------------------------------------------------------------|
+| product_key          | INT         | Surrogate key uniquely identifying each product.              |
+| product_id           | INT         | Business identifier for the product.                          |
+| product_number       | NVARCHAR(50)| Alphanumeric product code for tracking and inventory.         |
+| product_name         | NVARCHAR(50)| Descriptive name of the product.                              |
+| category_id          | NVARCHAR(50)| Identifier for the product category.                          |
+| category             | NVARCHAR(50)| High-level product category (e.g., Bikes, Components).        |
+| subcategory          | NVARCHAR(50)| Detailed product classification within the category.          |
+| maintenance_required | NVARCHAR(50)| Indicates if maintenance is required (Yes/No).                |
+| cost                 | INT         | Base cost of the product.                                     |
+| product_line         | NVARCHAR(50)| Product line or series (e.g., Road, Mountain).                |
+| start_date           | DATE        | Date when the product became available for sale.              |
+
+
 3. gold.fact_sales
 Purpose
 
 Stores transactional sales data at the lowest level of granularity.
 Used for revenue analysis, customer purchasing behavior, and product performance metrics.
 
-Table Structure
-Column Name	Data Type	Description
-order_number	NVARCHAR(50)	Unique sales order identifier (e.g., SO54496).
-product_key	INT	Foreign key referencing gold.dim_products.
-customer_key	INT	Foreign key referencing gold.dim_customers.
-order_date	DATE	Date when the order was placed.
-shipping_date	DATE	Date when the order was shipped.
-due_date	DATE	Date when payment was due.
-sales_amount	INT	Total sales value for the order line.
-quantity	INT	Number of product units sold.
-price	INT	Selling price per unit.
+### Sales Order Table Structure
+
+| Column Name   | Data Type     | Description                                           |
+|---------------|---------------|-------------------------------------------------------|
+| order_number  | NVARCHAR(50)  | Unique sales order identifier (e.g., SO54496).       |
+| product_key   | INT           | Foreign key referencing `gold.dim_products`.         |
+| customer_key  | INT           | Foreign key referencing `gold.dim_customers`.        |
+| order_date    | DATE          | Date when the order was placed.                      |
+| shipping_date | DATE          | Date when the order was shipped.                     |
+| due_date      | DATE          | Date when payment was due.                           |
+| sales_amount  | INT           | Total sales value for the order line.                |
+| quantity      | INT           | Number of product units sold.                        |
+| price         | INT           | Selling price per unit.                              |
+
 Data Modeling Notes
 
-Star schema design optimized for analytical queries
+- Star schema design optimized for analytical queries
 
-Surrogate keys used in all dimension tables
+- Surrogate keys used in all dimension tables
 
-Fact table references dimensions using foreign keys
+- Fact table references dimensions using foreign keys
 
-Optimized for BI tools such as Power BI, Microsoft Fabric, and SQL analytics
+- Optimized for BI tools such as Power BI, Microsoft Fabric, and SQL analytics
