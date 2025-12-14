@@ -10,18 +10,22 @@ Purpose
 Stores customer master data enriched with demographic and geographic attributes.
 Used for customer segmentation, behavioral analysis, and sales reporting.
 
-Table Structure
-Column Name	Data Type	Description
-customer_key	INT	Surrogate key uniquely identifying each customer record.
-customer_id	INT	Business identifier assigned to each customer.
-customer_number	NVARCHAR(50)	Alphanumeric customer reference number.
-first_name	NVARCHAR(50)	Customer’s first name.
-last_name	NVARCHAR(50)	Customer’s last or family name.
-country	NVARCHAR(50)	Country of residence (e.g., Australia).
-marital_status	NVARCHAR(50)	Marital status of the customer (e.g., Married, Single).
-gender	NVARCHAR(50)	Gender of the customer (e.g., Male, Female, n/a).
-birthdate	DATE	Customer date of birth (YYYY-MM-DD).
-create_date	DATE	Date when the customer record was created.
+### Customer Table Structure
+
+| Column Name     | Data Type      | Description                                                           |
+|-----------------|----------------|-----------------------------------------------------------------------|
+| customer_key    | INT            | Surrogate key uniquely identifying each customer record.             |
+| customer_id     | INT            | Business identifier assigned to each customer.                        |
+| customer_number | NVARCHAR(50)   | Alphanumeric customer reference number.                               |
+| first_name      | NVARCHAR(50)   | Customer’s first name.                                               |
+| last_name       | NVARCHAR(50)   | Customer’s last or family name.                                      |
+| country         | NVARCHAR(50)   | Country of residence (e.g., Australia).                              |
+| marital_status  | NVARCHAR(50)   | Marital status of the customer (e.g., Married, Single).              |
+| gender          | NVARCHAR(50)   | Gender of the customer (e.g., Male, Female, n/a).                    |
+| birthdate       | DATE           | Customer date of birth (YYYY-MM-DD).                                 |
+| create_date     | DATE           | Date when the customer record was created.                           |
+
+
 2. gold.dim_products
 Purpose
 
