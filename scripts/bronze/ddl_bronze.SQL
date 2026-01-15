@@ -1,6 +1,6 @@
 /* 
 ============================================================
-    🟫 DDL Script:  BRONZE LAYER TABLES
+DDL Script:  BRONZE LAYER TABLES
     ---------------------------------------------------------
 Script Purpose:
     This script create tables in the 'bronze; schema, dropping 
